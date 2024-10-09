@@ -1,9 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.joseluis.pe.cmodelo;
 
+package com.joseluis.pe.cmodelo;
+//TipoDocumentoDao.java
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -25,14 +22,14 @@ public class TipoDocumento {
 //        this.orden = orden;
 //    }
 
-    public Date getFechaActualiza() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat ("yy-MM-dd");
-        return fechaActualiza;
+    public String getFechaActualiza() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat ("dd-MM-yy");
+        return dateFormat.format(fechaActualiza);
         
     }
 
     public void setFechaActualiza(String fechaActualiza)throws ParseException {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yy-MM-dd");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yy");
         this.fechaActualiza = dateFormat.parse(fechaActualiza);
     }
 
