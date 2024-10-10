@@ -12,11 +12,11 @@ public class Test {
     TipoDocumento td = new TipoDocumento();
     
     public void insertar()  throws SQLException, ParseException{
-        td.setNombre("Registro Nacional de Identidad");
+        td.setNombre("jose luis");
         td.setEstado("1");
-        td.setOrden(1);
+        td.setOrden(4);
         td.setSigla("DNI");
-        td.setFechaActualiza("09-10-24");
+        td.setFechaActualiza("10-10-24");
         tdbo.agregarTipoDocumento(td);
     }
     
@@ -28,11 +28,11 @@ public class Test {
     public void modificar() throws SQLException, ParseException{
          
         
-        td.setNombre("aldair");
-        td.setEstado("2");
-        td.setOrden(3);
+        td.setNombre("jose luis");
+        td.setEstado("1");
+        td.setOrden(4);
         td.setSigla("DNI");
-        td.setFechaActualiza("08-10-24");
+        td.setFechaActualiza("10-10-24");
         td.setIdTipoDocumento(23);
         tdbo.modificarTipoDocumento(td);
     }

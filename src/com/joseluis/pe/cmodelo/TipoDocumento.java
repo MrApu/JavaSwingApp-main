@@ -74,6 +74,10 @@ public class TipoDocumento {
     public void setOrden(int orden) {
         this.orden = orden;
     }
+
+    public void agregarTipoDocumento(TipoDocumento td) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     
 }

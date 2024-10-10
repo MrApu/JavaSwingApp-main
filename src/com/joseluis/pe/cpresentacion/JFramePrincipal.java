@@ -2,10 +2,7 @@ package com.joseluis.pe.cpresentacion;
 
 import java.awt.BorderLayout;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 
 /**
  *
@@ -35,6 +32,9 @@ public class JFramePrincipal extends javax.swing.JFrame {
         btnMenuCalculadora = new javax.swing.JMenuItem();
         btnMenuContador = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
+        btnMenuTipoDocumento = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,11 +44,11 @@ public class JFramePrincipal extends javax.swing.JFrame {
         principal.setLayout(principalLayout);
         principalLayout.setHorizontalGroup(
             principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 505, Short.MAX_VALUE)
+            .addGap(0, 599, Short.MAX_VALUE)
         );
         principalLayout.setVerticalGroup(
             principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 265, Short.MAX_VALUE)
+            .addGap(0, 543, Short.MAX_VALUE)
         );
 
         jMenuBar2.setFocusCycleRoot(true);
@@ -77,13 +77,30 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jMenu4.setText("Edit");
         jMenuBar2.add(jMenu4);
 
+        jMenu1.setText("Mantenimiento");
+
+        btnMenuTipoDocumento.setText("Tipo Documento");
+        btnMenuTipoDocumento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenuTipoDocumentoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(btnMenuTipoDocumento);
+
+        jMenuItem2.setText("Persona");
+        jMenu1.add(jMenuItem2);
+
+        jMenuBar2.add(jMenu1);
+
         setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(principal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,6 +133,17 @@ public class JFramePrincipal extends javax.swing.JFrame {
         principal.revalidate();
         principal.repaint();
     }//GEN-LAST:event_btnMenuContadorActionPerformed
+
+    private void btnMenuTipoDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuTipoDocumentoActionPerformed
+        jpTipoDocumento tp = new jpTipoDocumento();
+        tp = new jpTipoDocumento();
+        tp.setSize(617, 408);
+        tp.setLocation(0,0);
+        principal.removeAll();
+        principal.add(tp, BorderLayout.CENTER);
+        principal.revalidate();
+        principal.repaint();
+    }//GEN-LAST:event_btnMenuTipoDocumentoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,9 +183,12 @@ public class JFramePrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem btnMenuCalculadora;
     private javax.swing.JMenuItem btnMenuContador;
+    private javax.swing.JMenuItem btnMenuTipoDocumento;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel principal;
     // End of variables declaration//GEN-END:variables
 }
