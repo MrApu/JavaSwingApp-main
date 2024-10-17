@@ -1,6 +1,9 @@
 package com.joseluis.pe.cpresentacion;
 
 import java.awt.BorderLayout;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 
@@ -16,7 +19,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
     public JFramePrincipal() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,9 +35,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
         btnMenuCalculadora = new javax.swing.JMenuItem();
         btnMenuContador = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        jMenu1 = new javax.swing.JMenu();
+        btnTipoDocumento = new javax.swing.JMenu();
         btnMenuTipoDocumento = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        btnMenuPersonaDocumento = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,7 +81,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jMenu4.setText("Edit");
         jMenuBar2.add(jMenu4);
 
-        jMenu1.setText("Mantenimiento");
+        btnTipoDocumento.setText("Mantenimiento");
 
         btnMenuTipoDocumento.setText("Tipo Documento");
         btnMenuTipoDocumento.addActionListener(new java.awt.event.ActionListener() {
@@ -85,12 +89,20 @@ public class JFramePrincipal extends javax.swing.JFrame {
                 btnMenuTipoDocumentoActionPerformed(evt);
             }
         });
-        jMenu1.add(btnMenuTipoDocumento);
+        btnTipoDocumento.add(btnMenuTipoDocumento);
 
         jMenuItem2.setText("Persona");
-        jMenu1.add(jMenuItem2);
+        btnTipoDocumento.add(jMenuItem2);
 
-        jMenuBar2.add(jMenu1);
+        btnMenuPersonaDocumento.setText("Persona Documento");
+        btnMenuPersonaDocumento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenuPersonaDocumentoActionPerformed(evt);
+            }
+        });
+        btnTipoDocumento.add(btnMenuPersonaDocumento);
+
+        jMenuBar2.add(btnTipoDocumento);
 
         setJMenuBar(jMenuBar2);
 
@@ -135,15 +147,30 @@ public class JFramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMenuContadorActionPerformed
 
     private void btnMenuTipoDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuTipoDocumentoActionPerformed
-        jpTipoDocumento tp = new jpTipoDocumento();
-        tp = new jpTipoDocumento();
-        tp.setSize(617, 408);
-        tp.setLocation(0,0);
-        principal.removeAll();
-        principal.add(tp, BorderLayout.CENTER);
-        principal.revalidate();
-        principal.repaint();
+        try {
+            jpTipoDocumento tp = new jpTipoDocumento();
+            tp.setSize(617, 408);
+            tp.setLocation(0,0);
+            principal.removeAll();
+            principal.add(tp, BorderLayout.CENTER);
+            principal.revalidate();
+            principal.repaint();
+        } catch (SQLException ex) {
+            Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnMenuTipoDocumentoActionPerformed
+
+    private void btnMenuPersonaDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuPersonaDocumentoActionPerformed
+       
+            jpPersonadocumento pd = new jpPersonadocumento();
+            pd.setSize(617,408);
+            pd.setLocation(0,0);
+            principal.removeAll();
+            principal.add(pd, BorderLayout.CENTER);
+            principal.revalidate();
+            principal.repaint();
+        
+    }//GEN-LAST:event_btnMenuPersonaDocumentoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,8 +210,9 @@ public class JFramePrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem btnMenuCalculadora;
     private javax.swing.JMenuItem btnMenuContador;
+    private javax.swing.JMenuItem btnMenuPersonaDocumento;
     private javax.swing.JMenuItem btnMenuTipoDocumento;
-    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu btnTipoDocumento;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar2;

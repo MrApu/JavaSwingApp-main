@@ -23,13 +23,13 @@ public class TipoDocumento {
 //    }
 
     public String getFechaActualiza() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat ("dd-MM-yy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat ("dd-MM-yyyy");
         return dateFormat.format(fechaActualiza);
         
     }
 
     public void setFechaActualiza(String fechaActualiza)throws ParseException {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         this.fechaActualiza = dateFormat.parse(fechaActualiza);
     }
 

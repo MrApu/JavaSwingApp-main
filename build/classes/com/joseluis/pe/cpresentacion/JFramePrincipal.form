@@ -36,7 +36,7 @@
             <Property name="text" type="java.lang.String" value="Edit"/>
           </Properties>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu1">
+        <Menu class="javax.swing.JMenu" name="btnTipoDocumento">
           <Properties>
             <Property name="text" type="java.lang.String" value="Mantenimiento"/>
           </Properties>
@@ -53,6 +53,14 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Persona"/>
               </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="btnMenuPersonaDocumento">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Persona Documento"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMenuPersonaDocumentoActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
